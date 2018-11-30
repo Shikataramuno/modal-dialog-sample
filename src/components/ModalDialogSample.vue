@@ -1,15 +1,14 @@
 <template>
   <div class="ModalDialogSampleBase">
     <h1>{{ msg }}</h1>
-    <button @click="show" :diable='!showDialog'>ダイアログの表示</button>
+    <button @click="show">ダイアログの表示</button>
     <div class="message-field">ダイアログ入力メッセージ<br>{{message}}</div>
     <ModalDialog v-if="showDialog" @ok='ok' @cancel='cancel'/>
   </div>
-
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 import ModalDialog from './ModalDialog.vue';
 
 @Component({
@@ -19,23 +18,17 @@ import ModalDialog from './ModalDialog.vue';
 })
 export default class ModalDialogSample extends Vue {
   name: string = 'ModalDialogSample';
+  msg: string = 'モーダルダイアログのサンプル';
   message: string = '';
   showDialog: boolean = false;
-  @Prop() private msg!: string;
-  // computed
-  // methods
   show(): void {
-    console.log('showDialog');
     this.showDialog = true;
   }
   ok(message: string): void {
-    console.log('close with OK');
-    console.log(message);
     this.showDialog = false;
     this.message = message;
   }
   cancel(): void {
-    console.log('close with Cancel');
     this.showDialog = false;
   }
 }

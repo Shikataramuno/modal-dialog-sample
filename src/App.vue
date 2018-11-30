@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <ModalDialogSample msg="モーダルダイアログのサンプル"/>
+    <ModalDialogSample/>
   </div>
 </template>
 
