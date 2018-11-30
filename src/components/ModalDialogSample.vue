@@ -2,7 +2,7 @@
   <div class="ModalDialogSampleBase">
     <h1>{{ msg }}</h1>
     <button @click="show" :diable='!showDialog'>ダイアログの表示</button>
-    <div>{{message}}</div>
+    <div class="message-field">ダイアログ入力メッセージ<br>{{message}}</div>
     <ModalDialog v-if="showDialog" @ok='ok' @cancel='cancel'/>
   </div>
 
@@ -43,4 +43,10 @@ export default class ModalDialogSample extends Vue {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.message-field {
+  height: auto;
+  width: auto;
+  margin-top: 10px;
+  font-size: x-large;
+}
 </style>

@@ -26,16 +26,16 @@ export default class ModalDialog extends Vue {
 
   @Emit('ok')
   ok(str: string): void {
-    console.log('ok @ dialog');
-    console.log(str);
+    //
   }
+
   @Emit('cancel')
   cancel(): void {
-    console.log('cancel @ dialog');
+    //
   }
 }
 </script>
 
-<style scoped>
+<style>
 @import '../style/modal.css'
 </style>
